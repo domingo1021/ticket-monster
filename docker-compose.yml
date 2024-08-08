@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16.3-alpine
+    container_name: ticket-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ticket_db
+
+  redis:
+    image: redis:7.2.5-alpine
+    container_name: ticket-cache
+    ports:
+      - 6379:6379
+
+  ticket-service:
+    build: ./ticket-service
+    container_name: ticket-service
+    image: ticket-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://ticket-db:5432/ticket_db
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_APP_PORT: 8080
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - redis
+    restart: on-failure
+
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    image: api-gateway
+    ports:
+      - "8081:8081"
+    depends_on:
+      - ticket-service
+      - redis
+    restart: on-failure
