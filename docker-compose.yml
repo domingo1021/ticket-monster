@@ -33,13 +33,13 @@ services:
       - redis
     restart: on-failure
 
-  api-gateway:
-    build: ./api-gateway
-    container_name: api-gateway
-    image: api-gateway
-    ports:
-      - "8081:8081"
-    depends_on:
-      - ticket-service
-      - redis
-    restart: on-failure
+#  api-gateway:
+#    build: ./api-gateway
+#    container_name: api-gateway
+#    image: api-gateway
+#    ports:
+#      - "8081:8081"
+#    depends_on:
+#      - ticket-service
+#      - redis
+#    restart: on-failure

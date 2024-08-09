@@ -1,15 +1,20 @@
 server:
-  port: 8080
+  port: ${SPRING_APP_PORT}
 
 spring:
   application:
     name: ticket-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/ticket_db
-    username: user
-    password: password
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
 
   jpa:
     hibernate:
