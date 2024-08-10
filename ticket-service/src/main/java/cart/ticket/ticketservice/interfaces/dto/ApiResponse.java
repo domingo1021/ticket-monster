@@ -1,5 +1,7 @@
 package cart.ticket.ticketservice.interfaces.dto;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.MDC;
 
 public class ApiResponse<T> {
@@ -9,11 +11,17 @@ public class ApiResponse<T> {
     private T data;
     private String requestId;
 
+    private static final ObjectMapper objectMapper = new ObjectMapper();
+
     public ApiResponse(int code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
         this.requestId = MDC.get("requestId");
+    }
+
+    public static <T> ApiResponse<T> success() {
+        return new ApiResponse<>(20000, "Success", null);
     }
 
     public static <T> ApiResponse<T> success(T data) {
@@ -38,6 +46,14 @@ public class ApiResponse<T> {
 
     public String getRequestId() {
         return requestId;
+    }
+
+    public String toJson() {
+        try {
+            return objectMapper.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Error serializing ApiResponse to JSON", e);
+        }
     }
 }
 

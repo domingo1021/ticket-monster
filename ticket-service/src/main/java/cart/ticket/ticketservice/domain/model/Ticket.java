@@ -26,13 +26,4 @@ public class Ticket {
 
     public Ticket() {
     }
-
-    public Ticket(Long id, String concert, LocalDate date, String venue, BigDecimal price, TicketStatus status) {
-        this.id = id;
-        this.concert = concert;
-        this.date = date;
-        this.venue = venue;
-        this.price = price;
-        this.status = status;
-    }
 }
