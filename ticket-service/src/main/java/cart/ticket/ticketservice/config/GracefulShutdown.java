@@ -13,7 +13,6 @@ public class GracefulShutdown {
     @PreDestroy
     public void onShutdown() {
         logger.info("Application is shutting down, flushing logs...");
-        // Flush any buffered logs if necessary
     }
 }
 
