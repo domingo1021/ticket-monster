@@ -11,19 +11,17 @@ import java.util.Map;
 @Configuration
 public class ExceptionMappingConfig {
 
-    @Bean
-    public Map<Class<? extends Throwable>, HttpStatus> exceptionStatusMapper() {
-        return Map.of(
-                IllegalArgumentException.class, HttpStatus.BAD_REQUEST,
-                TicketUnavailableException.class, HttpStatus.BAD_REQUEST
-        );
-    }
+  @Bean
+  public Map<Class<? extends Throwable>, HttpStatus> exceptionStatusMapper() {
+    return Map.of(
+        IllegalArgumentException.class, HttpStatus.BAD_REQUEST,
+        TicketUnavailableException.class, HttpStatus.BAD_REQUEST);
+  }
 
-    @Bean
-    public Map<Class<? extends Throwable>, ApiResponse<Void>> exceptionResponseMapper() {
-        return Map.of(
-                IllegalArgumentException.class, ApiResponse.error(40000, "Invalid request"),
-                TicketUnavailableException.class, ApiResponse.error(40001, "Ticket is unavailable")
-        );
-    }
+  @Bean
+  public Map<Class<? extends Throwable>, ApiResponse<Void>> exceptionResponseMapper() {
+    return Map.of(
+        IllegalArgumentException.class, ApiResponse.error(40000, "Invalid request"),
+        TicketUnavailableException.class, ApiResponse.error(40001, "Ticket is unavailable"));
+  }
 }

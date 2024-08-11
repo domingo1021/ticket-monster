@@ -8,11 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class GracefulShutdown {
 
-    private static final Logger logger = LoggerFactory.getLogger(GracefulShutdown.class);
+  private static final Logger logger = LoggerFactory.getLogger(GracefulShutdown.class);
 
-    @PreDestroy
-    public void onShutdown() {
-        logger.info("Application is shutting down, flushing logs...");
-    }
+  @PreDestroy
+  public void onShutdown() {
+    logger.info("Application is shutting down, flushing logs...");
+  }
 }
-

@@ -1,5 +1,8 @@
 package cart.ticket.ticketservice.domain.model;
 
 public enum TicketStatus {
-    AVAILABLE, PENDING, RESERVED, SOLD
+  AVAILABLE,
+  PENDING,
+  RESERVED,
+  SOLD
 }

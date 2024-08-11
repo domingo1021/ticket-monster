@@ -13,11 +13,11 @@ import java.util.Optional;
 @Repository
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
-    @Query("SELECT t FROM Ticket t WHERE t.id = :id AND t.status = :status")
-    Optional<Ticket> findByIdAndLock(Long id, TicketStatus status);
+  @Lock(LockModeType.PESSIMISTIC_WRITE)
+  @Query("SELECT t FROM Ticket t WHERE t.id = :id AND t.status = :status")
+  Optional<Ticket> findByIdAndLock(Long id, TicketStatus status);
 
-    Optional<Ticket> findById(Long id);
+  Optional<Ticket> findById(Long id);
 
-    Optional<Ticket> findByStatus(TicketStatus status);
+  Optional<Ticket> findByStatus(TicketStatus status);
 }

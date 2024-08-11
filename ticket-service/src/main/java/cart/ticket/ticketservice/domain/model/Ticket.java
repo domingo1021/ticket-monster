@@ -12,18 +12,17 @@ import java.time.LocalDate;
 @Setter
 public class Ticket {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String concert;
-    private LocalDate date;
-    private String venue;
-    private BigDecimal price;
+  private String concert;
+  private LocalDate date;
+  private String venue;
+  private BigDecimal price;
 
-    @Enumerated(EnumType.STRING)
-    private TicketStatus status;
+  @Enumerated(EnumType.STRING)
+  private TicketStatus status;
 
-    public Ticket() {
-    }
+  public Ticket() {}
 }
