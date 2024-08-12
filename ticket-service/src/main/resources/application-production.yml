@@ -1,9 +1,12 @@
 server:
-  port: ${SPRING_APP_PORT}
+  port: ${SPRING_APP_PORT:8080}
 
 spring:
   application:
     name: ticket-service
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
 
   datasource:
     url: ${SPRING_DATASOURCE_URL}

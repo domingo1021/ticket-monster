@@ -52,6 +52,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
     String subscriptionType = parseSubscriptionType(payload);
     if (subscriptionWhitelist.contains(subscriptionType)) {
       subscribe(session, subscriptionType);
+      session.sendMessage(new TextMessage("Subscribed to: " + subscriptionType));
     } else {
       logger.warn("Received an invalid message: {}", payload);
       session.sendMessage(new TextMessage("Invalid subscription type: " + subscriptionType));

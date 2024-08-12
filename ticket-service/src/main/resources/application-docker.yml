@@ -5,6 +5,9 @@ spring:
   application:
     name: ticket-service
 
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+
   datasource:
     url: jdbc:postgresql://ticket-db:5432/ticket_db
     username: user
