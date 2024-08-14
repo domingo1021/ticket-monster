@@ -1,4 +1,4 @@
-package cart.ticket.ticketservice.interfaces.dto;
+package cart.ticket.ticketservice.presentation.dto;
 
 public record WsSubscriptionMessage(String action, Data data) {
 

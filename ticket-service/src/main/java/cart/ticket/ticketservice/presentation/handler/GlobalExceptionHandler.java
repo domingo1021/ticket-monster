@@ -1,6 +1,6 @@
-package cart.ticket.ticketservice.interfaces.handler;
+package cart.ticket.ticketservice.presentation.handler;
 
-import cart.ticket.ticketservice.interfaces.dto.ApiResponse;
+import cart.ticket.ticketservice.presentation.dto.ApiResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

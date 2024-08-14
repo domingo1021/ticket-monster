@@ -1,9 +1,9 @@
 package cart.ticket.ticketservice.application.service;
 
 import cart.ticket.ticketservice.domain.model.SnowflakeIdGenerator;
-import cart.ticket.ticketservice.interfaces.dto.TicketStatusUpdate;
-import cart.ticket.ticketservice.interfaces.handler.WebSocketHandler;
-import cart.ticket.ticketservice.interfaces.handler.WebSocketHandler.WebSocketConstants;
+import cart.ticket.ticketservice.presentation.dto.TicketStatusUpdate;
+import cart.ticket.ticketservice.presentation.handler.WebSocketHandler;
+import cart.ticket.ticketservice.presentation.handler.WebSocketHandler.WebSocketConstants;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 

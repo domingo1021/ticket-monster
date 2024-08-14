@@ -1,4 +1,4 @@
-package cart.ticket.ticketservice.interfaces.dto;
+package cart.ticket.ticketservice.presentation.dto;
 
 import cart.ticket.ticketservice.domain.model.TicketStatus;
 

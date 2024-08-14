@@ -1,4 +1,4 @@
-package cart.ticket.ticketservice.domain.repository;
+package cart.ticket.ticketservice.infrastructure.repository;
 
 import cart.ticket.ticketservice.domain.model.*;
 

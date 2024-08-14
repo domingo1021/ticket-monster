@@ -1,6 +1,6 @@
 package cart.ticket.ticketservice.config;
 
-import cart.ticket.ticketservice.interfaces.handler.WebSocketHandler;
+import cart.ticket.ticketservice.presentation.handler.WebSocketHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;

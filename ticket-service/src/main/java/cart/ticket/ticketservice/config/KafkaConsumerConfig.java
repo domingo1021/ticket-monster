@@ -1,6 +1,6 @@
 package cart.ticket.ticketservice.config;
 
-import cart.ticket.ticketservice.interfaces.dto.TicketStatusUpdate;
+import cart.ticket.ticketservice.presentation.dto.TicketStatusUpdate;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;

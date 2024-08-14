@@ -1,6 +1,6 @@
-package cart.ticket.ticketservice.interfaces.handler;
+package cart.ticket.ticketservice.presentation.handler;
 
-import cart.ticket.ticketservice.interfaces.dto.WsSubscriptionMessage;
+import cart.ticket.ticketservice.presentation.dto.WsSubscriptionMessage;
 
 import com.google.gson.Gson;
 import org.slf4j.Logger;

@@ -1,7 +1,7 @@
 package cart.ticket.ticketservice.config;
 
 import cart.ticket.ticketservice.domain.exception.TicketUnavailableException;
-import cart.ticket.ticketservice.interfaces.dto.ApiResponse;
+import cart.ticket.ticketservice.presentation.dto.ApiResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
